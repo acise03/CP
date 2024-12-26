@@ -1,0 +1,1 @@
+{"name":"Local: COCI '06 Regional #3 Firefly","url":"d:\\git\\CP\\private\\COCI '06 Regional #3 Firefly.cpp","tests":[{"id":1734993584303,"input":"20 10\n5\n5\n6\n4\n6\n7\n9\n1\n4\n4\n9\n4\n9\n3\n7\n1\n5\n1\n6\n5\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\git\\CP\\private\\COCI '06 Regional #3 Firefly.cpp","group":"local","local":true}

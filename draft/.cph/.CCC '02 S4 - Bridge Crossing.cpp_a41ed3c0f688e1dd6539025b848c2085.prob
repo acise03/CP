@@ -1,0 +1,1 @@
+{"name":"Local: CCC '02 S4 - Bridge Crossing","url":"d:\\git\\CP\\draft\\CCC '02 S4 - Bridge Crossing.cpp","tests":[{"id":1734478349676,"input":"3\n5\nmary\n5\njohn\n6\nfred\n10\nalice\n5\nyertle\n11","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\git\\CP\\draft\\CCC '02 S4 - Bridge Crossing.cpp","group":"local","local":true}
