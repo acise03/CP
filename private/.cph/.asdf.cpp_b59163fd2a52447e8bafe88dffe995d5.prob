@@ -1,0 +1,1 @@
+{"name":"Local: asdf","url":"c:\\Users\\Jessica Pu\\git\\CP\\private\\asdf.cpp","tests":[{"id":1735233938390,"input":"12\n1\n3 1\n1\n5 1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Jessica Pu\\git\\CP\\private\\asdf.cpp","group":"local","local":true}
