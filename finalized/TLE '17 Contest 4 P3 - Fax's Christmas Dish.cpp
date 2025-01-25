@@ -1,42 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+#define int long long
 /*
 https://dmoj.ca/problem/tle17c4p3
 */
 int N, M, D;
-int itemCount[300000];
-vector<int> recepies[300000];
-int nextt = 1;
+int d[300005];
+vector<int> recipes[300005];
 
-bool dfs(int v) {
-    bool tP = true;
-    if (recepies[v].size() < 1) {
-        nextt = max(nextt, v);
-        tP = false;
+int dfs(int v) {
+    int tp = -1;
+    for (int i: recipes[v]) {
+        tp = max(dfs(i), tp);
     }
-    for (int i: recepies[v]) {
-        bool possible;
-        if (itemCount[i] < 1) {
-            possible = dfs(i);
-        } else
-            possible = true;
-        if (!possible) {
-            nextt = max(nextt, i);
-            tP = false;
-            break;
-        }
-    }
-    if (tP) {
-        for (int i: recepies[v]) {
-            itemCount[i]--;
-        }
-        itemCount[v]++;
-    }
-    return tP;
+    if (tp == -1)
+        return d[v];
+    return min(tp, d[v]);
 }
 
-int main() {
+signed main() {
     cin.sync_with_stdio(0);
     cin.tie(0);
 
@@ -48,21 +30,19 @@ int main() {
         for (int j = 0; j < reqn; j++) {
             int k;
             cin >> k;
-            recepies[t].push_back(k);
+            recipes[t].push_back(k);
         }
     }
-    for (int i = 0; i < D; i++) {
+    fill(d, d + 300001, INT_MAX);
+    for (int i = 1; i <= D; i++) {
         int p;
         cin >> p;
-        itemCount[p]++;
-        if (p >= nextt) {
-            nextt = 0;
-            if (dfs(1)) {
-                cout << i + 1 << endl;
-                return 0;
-            }
-        }
+        d[p] = min(d[p], i);
     }
-    cout << -1 << endl;
+    int xx = dfs(1);
+    if (xx > D)
+        cout << -1 << endl;
+    else
+        cout << xx << endl;
     return 0;
 }
