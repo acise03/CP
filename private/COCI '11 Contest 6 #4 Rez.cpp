@@ -26,5 +26,7 @@ int main()
         cout << -5000 << " " << vert << " " << horiz << " " << -5000 << endl;
         vert--;
         horiz++;
+        //cout << i;
     }
+    //cout << "DONE.";
 }

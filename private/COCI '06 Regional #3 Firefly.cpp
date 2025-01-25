@@ -33,8 +33,7 @@ int main()
     int countt = 0;
     for (int i = 1; i <= H; i++)
     {
-        int k;
-        k = upper_bound(tops.begin(), tops.end(), H - i) - tops.begin();
+        int k = upper_bound(tops.begin(), tops.end(), H - i) - tops.begin();
         int val1 = tops.size() - k;
         int val2 = bottoms.size() - ((lower_bound(bottoms.begin(), bottoms.end(), i) - bottoms.begin()));
         int tot = val1 + val2;
