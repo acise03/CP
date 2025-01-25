@@ -1,1 +1,0 @@
-{"name":"Local: CCC '05 S4 - Pyramid Message Scheme","url":"c:\\git\\CP\\finalized\\CCC '05 S4 - Pyramid Message Scheme.cpp","tests":[{"id":1736265335377,"input":"1\n9\nH\nB\nH\nA\nC\nA\nD\nA\nH","output":"40"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\git\\CP\\finalized\\CCC '05 S4 - Pyramid Message Scheme.cpp","group":"local","local":true}
