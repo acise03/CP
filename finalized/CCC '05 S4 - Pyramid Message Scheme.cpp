@@ -4,30 +4,37 @@ using namespace std;
 int L, n, ind;
 
 map<string, int> nameToInd;
-int prevs[1000];
+int prevs[105];
+int grid[105];
 string alphaWord;
-vector<int> paths[1000];
+vector<int> paths[105];
 
-int rec(int v, int p, int c) {
-    if (paths[v].empty()) {
+int rec(int v, int p, int c)
+{
+    if (paths[v].empty())
+    {
         return 0;
     }
     int m = 0;
-    for (int vv: paths[v]) {
-        if (vv != v && vv != p) {
+    for (int vv : paths[v])
+    {
+        if (vv != v)
+        {
             m = max(m, rec(vv, v, c) + 1);
         }
     }
     return m;
 }
 
-int main() {
+int main()
+{
     cin.sync_with_stdio(0);
     cin.tie(0);
 
     cin >> L;
 
-    for (int i = 0; i < L; i++) {
+    for (int i = 0; i < L; i++)
+    {
         cin >> n;
 
         int longest = 0;
@@ -36,40 +43,34 @@ int main() {
         int prev = -1;
         alphaWord = "{";
 
-        nameToInd.clear();
-        memset(prevs, -1, 500);
-        for (int j = 0; j < 1000; j++) {
-            paths[j].clear();
-        }
-        int lastest = 0;
-
-        for (int j = 0; j < n; j++) {
+        for (int j = 0; j < n; j++)
+        {
             string name;
             cin >> name;
-            if (name < alphaWord) {
+            if (name < alphaWord)
+            {
                 alphaWord = name;
             }
             int v = ind;
 
-            if (nameToInd.count(name) == 0) {
+            if (nameToInd.count(name) == 0)
+            {
                 nameToInd[name] = v;
                 ind++;
 
                 prevs[v] = prev;
-                if (prev != -1) {
-                    paths[prev].push_back(v);
-                    paths[v].push_back(prev);
-                }
+                paths[prev].push_back(v);
+
                 prev = v;
-            } else {
+            }
+            else
+            {
                 v = nameToInd[name];
                 prev = v;
                 paths[v].push_back(prev);
-                paths[prev].push_back(v);
             }
-            lastest = v;
         }
-        longest = rec(lastest, -1, 0);
-        cout << 10 * n - 10 * longest * 2 << endl;
+        int longest = rec(nameToInd[name], -1, 0);
+        cout << longest << endl;
     }
 }
