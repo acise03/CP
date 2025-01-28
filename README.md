@@ -12,7 +12,7 @@ Visit my site: [https://acise03.github.io/CP/index.html](https://acise03.github.
 
 ## Usage
 
-Use this website to see my solutions to challenging competitive programming problems! You can make direct changes to my solution to either fix or improve it. You are also able to conveniently run the test cases on the code.
+Use this website to see my solutions to challenging competitive programming problems! You can make direct changes to my solution to either fix or improve it. You are also able to conveniently run the test cases on the website.
 <!-- CONTACT -->
 ## Contact
 
