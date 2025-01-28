@@ -36,9 +36,29 @@ main {
     padding: 20px;
 }
 
+.problems {
+    padding: auto;
+}
+
 .page-content {
     display: none;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Two equal-width columns */
+    gap: 20px;
+    /* Space between columns */
+}
+
+.grid-item {
+    padding: 10px;
+    box-sizing: border-box;
+    /* Ensures padding is included in the width */
+}
+
+
 
 footer {
     background-color: #333;
