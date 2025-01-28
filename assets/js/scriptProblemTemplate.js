@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     problemElement.innerHTML = `Problem: <a href="${problemLink}" target="_blank">${problemName}</a>`;
 
     const linkShown = document.getElementById('problem-link');
-    linkShown.innerHTML = `Problem Link: <a href="${problemLink}" target="_blank">${problemLink}</a>`;
+    linkShown.innerHTML = `PROBLEM LINK FOR SUBMISSION: <a href="${problemLink}" target="_blank">${problemLink}</a>`;
 
     const problemInput = document.getElementById('user-input');
     const userInputValue = urlParams.get('input');
