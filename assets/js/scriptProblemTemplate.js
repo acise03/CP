@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const linkShown = document.getElementById('problem-link');
     linkShown.innerHTML = `Problem Link: <a href="${problemLink}" target="_blank">${problemLink}</a>`;
 
-
     editor = CodeMirror.fromTextArea(document.getElementById('code'), {
         mode: 'text/x-c++src',
         lineNumbers: true,
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
         indentUnit: 4,
         autofocus: true
     });
-
 
     fetch(`programmingFiles/files/${problemName}.cpp`)
         .then(response => {
@@ -37,7 +35,32 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 });
 
-function highlightCode() {
-    editor.refresh();
-    console.log('Code readability increased.');
+
+async function runCode() {
+    const code = editor.getValue();
+    const outputElement = document.getElementById('output');
+
+    outputElement.textContent = 'Running...';
+
+    try {
+        const response = await fetch('https://emkc.org/api/v2/piston/execute', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                language: 'cpp',
+                version: '10.2.0',
+                files: [{ content: code }]
+            })
+        });
+
+        const result = await response.json();
+
+        if (result.run.output) {
+            outputElement.textContent = result.run.output;
+        } else {
+            outputElement.textContent = 'No output.';
+        }
+    } catch (error) {
+        outputElement.textContent = 'Error: ' + error.message;
+    }
 }
