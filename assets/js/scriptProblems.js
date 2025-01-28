@@ -269,6 +269,16 @@ C.C.`
     ];
 
     problems.sort((a, b) => a.name.localeCompare(b.name));
+    
+    const button = document.createElement('button');
+    button.classList.add('button3');
+    button.textContent = 'blank file';
+    button.onclick = () => {
+        window.location.href = `problemTemplate.html?name=${encodeURIComponent('blank file')}&link=${encodeURIComponent('')}&input=${encodeURIComponent('')}`;
+
+    };
+    container.appendChild(button);
+    container.appendChild(document.createElement('br'));
 
     problems.forEach(problem => {
         const button = document.createElement('button');
@@ -281,4 +291,6 @@ C.C.`
         container.appendChild(button);
         container.appendChild(document.createElement('br'));
     });
+
+
 });
