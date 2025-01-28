@@ -1,33 +1,43 @@
-Hyperspace by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+<br />
+<div align="center">
+<h3 align="center">ShareYourCode!</h3>
+
+  <p align="center">
+    Hey everyone! I created this website to showcase my progress in competitive programming. Primarily, I will be sharing my insights into problems I have solved or am working on. However, in the future, I hope to allow public usage of this website for individual users to have discussions and share their progress with others.
+    <br />
+    <a href="https://github.com/acise03/CP"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://acise03.github.io/CP/goal.html">Access Demo</a>
+  </p>
+</div>
 
 
-So I've had the wireframe for this particular design kicking around for some time, but with all
-the other interesting (and in some cases, semi-secret) projects I've been working on it took me
-a little while to get to actually designing and coding it. Fortunately, things have eased up
-enough for me to finaly get around to it, so I'm happy to introduce Hyperspace: a fun, blocky,
-one-page design with a lot of color, a bit of animation, and an additional "generic" page template
-(because hey, even one-page sites usually need an interior page or two). Hope you dig it :)
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+![Page example](https://cloud-dlghfobiz-hack-club-bot.vercel.app/0readme.png)
 
-(* = not included)
+Here's a blank template to get started. To avoid retyping too much info, do a search and replace with your text editor for the following: `acise03`, `CP`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `ShareYourCode!`, `A website for users to share their coding problems with direct edit and run capabilities`, `project_license`
 
-AJ
-aj@lkn.io | @ajlkn
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-Credits:
+<!-- GETTING STARTED -->
+## Getting Started
 
-	Demo Images:
-		Unsplash (unsplash.com)
+Visit my site: [https://acise03.github.io/CP/index.html](https://acise03.github.io/CP/index.html)
 
-	Icons:
-		Font Awesome (fontawesome.io)
+<!-- USAGE EXAMPLES -->
+## Usage
 
-	Other:
-		jQuery (jquery.com)
-		Scrollex (github.com/ajlkn/jquery.scrollex)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+Use this website to see my solutions to challenging competitive programming problems! You can make direct changes to my solution to either fix or improve it. You are also able to conveniently run the test cases on the code.
+<!-- CONTACT -->
+## Contact
+
+Your Name - Jessica Pu - puyuhuan1@gmail.com
+
+Project Link: [https://github.com/acise03/CP](https://github.com/acise03/CP)
+
+HTML Template: Hyperspace by HTML5 UP
