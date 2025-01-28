@@ -16,7 +16,7 @@ Use this website to see my solutions to challenging competitive programming prob
 <!-- CONTACT -->
 ## Contact
 
-Your Name - Jessica Pu - puyuhuan1@gmail.com
+Jessica Pu - puyuhuan1@gmail.com
 
 Project Link: [https://github.com/acise03/CP](https://github.com/acise03/CP)
 
