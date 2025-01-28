@@ -1,54 +1,60 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> adjList[10];
-bool visited[10];
-int parent[10];
-int start, endd;
-bool dfs(int vertex, int previous)
-{
-    parent[vertex] = previous;
-    visited[vertex] = true;
-    if (vertex == endd)
-        return true;
-    for (int u : adjList[vertex])
-        if (!visited[u])
-        {
-            visited[u] = true;
-            if (dfs(u, vertex))
-                return true;
-        }
-    return false;
-}
-void print(int v)
-{
-    if (parent[v] != v)
-    {
-        print(parent[v]);
+int N, K, s, e, t, g, r;
+vector<pair<int, int> > adjList[100005];
+priority_queue<pair<int, int> > pq;
+int dist[100005];
+
+int red[1005];
+int green[1005];
+
+int main() {
+    cin.sync_with_stdio(0);
+    cin.tie(0);
+
+    cin >> N >> K;
+    fill_n(dist, N + 1, INT_MAX);
+
+    for (int i = 1; i <= N; i++) {
+        cin >> s >> e >> t;
+        adjList[s].push_back({e, t});
+        adjList[e].push_back({s, t});
     }
-    cout << v << " ";
-}
-int main()
-{
-    adjList[1].push_back(2);
-    adjList[2].push_back(1);
-    adjList[2].push_back(3);
-    adjList[2].push_back(4);
-    adjList[2].push_back(6);
-    adjList[2].push_back(7);
-    adjList[3].push_back(4);
-    adjList[3].push_back(8);
-    adjList[4].push_back(3);
-    adjList[4].push_back(2);
-    adjList[4].push_back(5);
-    adjList[5].push_back(4);
-    adjList[5].push_back(6);
-    adjList[6].push_back(5);
-    adjList[6].push_back(2);
-    adjList[7].push_back(2);
-    adjList[8].push_back(3);
-    start = 1;
-    endd = 3;
-    cout << dfs(1, 3) << endl;
-    print(3);
+
+    for (int i = 1; i <= K; i++) {
+        cin >> g >> r;
+        green[i] = g;
+        red[i] = r;
+    }
+
+    dist[1] = 0;
+    pq.push({0, 1});
+    while (!pq.empty()) {
+        auto x = pq.top();
+        pq.pop();
+        if (x.second == K) {
+            break;
+        }
+        for (auto t: adjList[x.second]) {
+            int mod = green[x.second] + red[x.second];
+            int waitTime;
+
+            if (mod != 0) {
+                waitTime = dist[x.second] % (mod);
+                if (waitTime >= green[x.second]) {
+                    // > or >=?
+                    waitTime = green[x.second] + red[x.second] - waitTime;
+                } else waitTime = 0;
+            } else {
+                waitTime = 0;
+            }
+
+            if (dist[x.second] + t.second + waitTime >= dist[t.first])
+                continue;
+            dist[t.first] = dist[x.second] + t.second + waitTime;
+            pq.push({-dist[t.first], t.first});
+        }
+    }
+    cout << dist[K] << endl;
 }
