@@ -3612,9 +3612,9 @@ body.is-preload .wrapper.fade>.inner {
 
 #header>nav>ul>li a {
 	border: 0;
-	color: rgba(255, 255, 255, 0.35);
+	color: rgb(255, 255, 255);
 	display: inline-block;
-	font-size: 0.6em;
+	font-size: 0.9em;
 	font-weight: bold;
 	letter-spacing: 0.25em;
 	text-transform: uppercase;
