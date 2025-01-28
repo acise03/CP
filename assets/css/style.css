@@ -1,8 +1,54 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+.interaction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+
+}
+
+#codeButton {
+    margin-top: 20px;
+}
+
+.input-output-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.input-section,
+.output-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+textarea#user-input {
+    flex: 1;
+    resize: none;
+    background: #1e1e1e;
+    color: #f8f8f2;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #444;
+    white-space: pre-wrap;
+    font-family: monospace;
+
+}
+
+#output {
+    flex: 1;
+    resize: none;
+    background: #1e1e1e;
+    color: #f8f8f2;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #444;
+    white-space: pre-wrap;
+    font-family: monospace;
 }
 
 header {
@@ -47,15 +93,12 @@ main {
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* Two equal-width columns */
     gap: 20px;
-    /* Space between columns */
 }
 
 .grid-item {
     padding: 10px;
     box-sizing: border-box;
-    /* Ensures padding is included in the width */
 }
 
 

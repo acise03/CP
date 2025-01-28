@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const linkShown = document.getElementById('problem-link');
     linkShown.innerHTML = `Problem Link: <a href="${problemLink}" target="_blank">${problemLink}</a>`;
 
+    const problemInput = document.getElementById('user-input');
+    const userInputValue = urlParams.get('input');
+    problemInput.value = userInputValue ? userInputValue : 'No set input. Please paste from problem statement link.';
+
     editor = CodeMirror.fromTextArea(document.getElementById('code'), {
         mode: 'text/x-c++src',
         lineNumbers: true,
@@ -39,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
 async function runCode() {
     const code = editor.getValue();
     const outputElement = document.getElementById('output');
-
+    const userInput = document.getElementById('user-input').value;
     outputElement.textContent = 'Running...';
 
     try {
@@ -49,7 +53,8 @@ async function runCode() {
             body: JSON.stringify({
                 language: 'cpp',
                 version: '10.2.0',
-                files: [{ content: code }]
+                files: [{ content: code }],
+                stdin: userInput
             })
         });
 

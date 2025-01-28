@@ -6,22 +6,12 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/style.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/theme/dracula.min.css" />
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
-	<style>
-		#output {
-			background: #1e1e1e;
-			color: #f8f8f2;
-			padding: 10px;
-			margin-top: 10px;
-			border: 1px solid #444;
-			white-space: pre-wrap;
-			font-family: monospace;
-		}
-	</style>
 </head>
 
 <body class="is-preload">
@@ -43,8 +33,19 @@
 					<h2 id="problem-name">Loading problem...</h2>
 					<hr />
 					<textarea id="code" class="language-cpp">Loading code...</textarea>
-					<button onclick="runCode()">Run Code</button>
-					<div id="output"></div>
+					<div class="interaction">
+						<div class="input-output-container">
+							<div class="input-section">
+								<inout>Enter input here:</inout>
+								<textarea id="user-input"></textarea>
+							</div>
+							<div class="output-section">
+								<inout>Your output:</inout>
+								<div id="output">[You must run your program before you receive output]</div>
+							</div>
+						</div>
+					</div>
+					<button onclick="runCode()" id="codeButton">Run Code</button>
 					<hr />
 					<h3 id="problem-link">Problem Link: <a href="https://dmoj.ca">loading link...</a></h3>
 				</section>
