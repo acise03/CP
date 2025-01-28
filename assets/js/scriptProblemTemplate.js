@@ -15,13 +15,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const userInputValue = urlParams.get('input');
     problemInput.value = userInputValue ? userInputValue : 'No set input. Please paste from problem statement link.';
 
+
     editor = CodeMirror.fromTextArea(document.getElementById('code'), {
         mode: 'text/x-c++src',
         lineNumbers: true,
         theme: 'dracula',
         indentUnit: 4,
-        autofocus: true
+        autofocus: true,
+        lineWrapping: true,
+        viewportMargin: Infinity
     });
+    editor.setSize('100%', 750);
 
     fetch(`programmingFiles/files/${problemName}.cpp`)
         .then(response => {
@@ -38,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
             editor.setValue('Error loading code.');
         });
 });
-
 
 async function runCode() {
     const code = editor.getValue();
