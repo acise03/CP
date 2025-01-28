@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-https://dmoj.ca/problem/coci09c3p4
-*/
 
 long long N, L, R, Y, x, v, h;
 vector<pair<long long, long long>> dsa;

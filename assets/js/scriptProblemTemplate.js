@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const problemInput = document.getElementById('user-input');
     const userInputValue = urlParams.get('input');
-    problemInput.value = userInputValue ? userInputValue : 'No set input. Please paste from problem statement link.';
+    problemInput.value = userInputValue ? userInputValue : 'Input not set. Please paste from problem statement link.';
 
 
     editor = CodeMirror.fromTextArea(document.getElementById('code'), {

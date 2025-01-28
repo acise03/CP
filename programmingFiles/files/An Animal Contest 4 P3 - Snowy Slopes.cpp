@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-https://dmoj.ca/problem/aac4p3
-*/
 long long N, M;
 long long countt, x, y, k, d, v, c;
 

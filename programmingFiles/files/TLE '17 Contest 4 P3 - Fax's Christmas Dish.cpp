@@ -1,9 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
-/*
-https://dmoj.ca/problem/tle17c4p3
-*/
+
 int N, M, D;
 int d[300005];
 vector<int> recipes[300005];

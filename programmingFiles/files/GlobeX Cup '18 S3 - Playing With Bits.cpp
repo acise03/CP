@@ -1,10 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-https://dmoj.ca/problem/tle17c4p3
-*/
-
 #define int long long
 
 long long N, M, K, V;

@@ -2,9 +2,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-https://dmoj.ca/problem/acc3p1
-*/
 
 long long N, K;
 int numCount[1000001];

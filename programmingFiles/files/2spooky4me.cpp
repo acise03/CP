@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-https://dmoj.ca/problem/coci09c3p4
-*/
 
 int N, L, S, a, b, s;
 vector<pair<int, int>> pointVSchangeDSA;

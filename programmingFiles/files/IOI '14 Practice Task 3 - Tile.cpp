@@ -2,13 +2,7 @@
 using namespace std;
 
 int n, x, y;
-//         cout << " " << Xm1 << " " << Ym1 << " " << Xm1 << " " << Ym2 << " " << Xm2 << " " << Ym1 << " " << Xm2 << " " << Ym2 << endl;
-/*
-Recurse(x1, y1, Xm1, Ym1);
-Recurse(Xm1, y1, x2, Ym1);
-Recurse(x1, Ym1, Xm1, y2);
-Recurse(Xm1, Ym1, x2, y2);
-        */
+
 void Recurse(int x1, int y1, int x2, int y2, int X, int Y) // all inclusive
 {
     if (x2 - x1 == 1)

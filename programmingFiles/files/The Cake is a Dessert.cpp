@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-https://dmoj.ca/problem/cake
-*/
 
 long long N, M, K, x, y, X, Y, Q, A, B, C, D;
 long long DiffArrayGrid[5005][5005];

@@ -29,9 +29,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-https://dmoj.ca/problem/dmopc21c3p2
-*/
 long long K;
 int main()
 {

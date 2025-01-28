@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-https://dmoj.ca/problem/dmopc15c1p5
-*/
 int W, H, N;
 int grid[255][255];
 int main()

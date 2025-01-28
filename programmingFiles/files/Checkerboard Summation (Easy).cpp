@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-https://dmoj.ca/problem/checkereasy
-*/
 int M, N, R, C, X, R_1, R_2, C_1, C_2;
 
 int prefixGridWhite[3002][3002];

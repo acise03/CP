@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-https://dmoj.ca/problem/aac4p3
-*/
 long long N;
 bool adjMatrix[1000][1000];
 bool visited[1000];

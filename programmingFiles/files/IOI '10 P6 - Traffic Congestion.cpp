@@ -26,7 +26,7 @@ int dfs(int vertex, int prev) // returns total # of fans in branch
     return currPeople;
 }
 
-int LocateCentre(int N, int P[1000000], int S[1000000], int D[1000000])
+int LocateCenter(int N, int P[1000000], int S[1000000], int D[1000000])
 {
     for (int i = 0; i < N - 1; i++)
     {
@@ -41,4 +41,22 @@ int LocateCentre(int N, int P[1000000], int S[1000000], int D[1000000])
 
     dfs(0, 0);
     return ans;
+}
+int PPP[1000000];
+int SSS[1000000];
+int DDD[1000000];
+
+int main()
+{
+    int N;
+    cin >> N;
+    for (int i = 0; i < N; i++)
+    {
+        cin >> PPP[i];
+    }
+    for (int i = 0; i < N - 1; i++)
+    {
+        cin >> SSS[i] >> DDD[i];
+    }
+    cout << LocateCenter(N, PPP, SSS, DDD) << endl;
 }

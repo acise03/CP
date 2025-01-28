@@ -1,10 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-https://dmoj.ca/problem/tle17c4p3
-*/
-
 long long N, A, B;
 long long As[400001];
 long long Bs[400001];

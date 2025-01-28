@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-https://dmoj.ca/problem/cheerio1s2
-*/
 long long N, A, B;
 priority_queue<tuple<long long, long long, long long>> stories;
 int main()

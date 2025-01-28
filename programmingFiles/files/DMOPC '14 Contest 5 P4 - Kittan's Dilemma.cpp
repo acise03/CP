@@ -2,9 +2,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-https://dmoj.ca/problem/dmopc14c5p4
-*/
 long long N, M;
 long long S, P;
 vector<long long> ones;

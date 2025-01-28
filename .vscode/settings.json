@@ -1,0 +1,25 @@
+{
+    "files.associations": {
+        "unordered_set": "cpp",
+        "utility": "cpp",
+        "iostream": "cpp",
+        "ios": "cpp",
+        "tuple": "cpp",
+        "xutility": "cpp",
+        "xiosbase": "cpp",
+        "algorithm": "cpp",
+        "barrier": "cpp",
+        "chrono": "cpp",
+        "latch": "cpp",
+        "limits": "cpp",
+        "random": "cpp",
+        "semaphore": "cpp",
+        "valarray": "cpp",
+        "span": "cpp",
+        "bitset": "cpp",
+        "stacktrace": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "cstdlib": "cpp"
+    }
+}

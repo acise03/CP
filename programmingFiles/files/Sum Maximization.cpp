@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-https://dmoj.ca/problem/tle17c4p3
-*/
 
 long long Q, N, M;
 

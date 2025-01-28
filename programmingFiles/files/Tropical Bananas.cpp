@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-https://dmoj.ca/problem/tropical
-*/
 long long arr[200005];
 long long diffArrA[200005];
 long long diffArrB[200005];

@@ -1,34 +1,9 @@
 // NOT FINISHED
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-https://dmoj.ca/problem/dmopc18c6p4
-*/
 
 
 
