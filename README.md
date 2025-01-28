@@ -5,16 +5,11 @@
 
 Hey everyone! I created this website to showcase my progress in competitive programming. Primarily, I will be sharing my insights into problems I have solved or am working on. However, in the future, I hope to allow public usage of this website for individual users to have discussions and share their progress with others.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 <!-- GETTING STARTED -->
 ## Getting Started
 
 Visit my site: [https://acise03.github.io/CP/index.html](https://acise03.github.io/CP/index.html)
 
-[https://github.com/acise03/CP](Explore the docs)
-<!-- USAGE EXAMPLES -->
 ## Usage
 
 Use this website to see my solutions to challenging competitive programming problems! You can make direct changes to my solution to either fix or improve it. You are also able to conveniently run the test cases on the code.
