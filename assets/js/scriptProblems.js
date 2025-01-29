@@ -272,7 +272,7 @@ C.C.`
     
     const button = document.createElement('button');
     button.classList.add('button3');
-    button.textContent = 'blank file';
+    button.textContent = 'blank file'; 
     button.onclick = () => {
         window.location.href = `problemTemplate.html?name=${encodeURIComponent('blank file')}&link=${encodeURIComponent('')}&input=${encodeURIComponent('')}`;
 

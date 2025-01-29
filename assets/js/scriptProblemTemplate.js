@@ -46,9 +46,10 @@ document.addEventListener('DOMContentLoaded', function () {
 async function runCode() {
     const code = editor.getValue();
     const outputElement = document.getElementById('output');
+    const runTimeElement = document.getElementById('runtime');
     const userInput = document.getElementById('user-input').value;
     outputElement.textContent = 'Running...';
-
+    runTimeElement.textContent = `<b>Runtime:</b> ...Running...`;
     try {
         const response = await fetch('https://emkc.org/api/v2/piston/execute', {
             method: 'POST',
@@ -62,12 +63,12 @@ async function runCode() {
         });
 
         const result = await response.json();
-
         if (result.run.output) {
             outputElement.textContent = result.run.output;
         } else {
             outputElement.textContent = 'No output.';
         }
+
     } catch (error) {
         outputElement.textContent = 'Error: ' + error.message;
     }
