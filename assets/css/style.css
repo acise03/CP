@@ -153,6 +153,8 @@ textarea#user-input {
     border: 1px solid #444;
     white-space: pre-wrap;
     font-family: monospace;
+    height: 250px;
+    overflow: auto;
 
 }
 
@@ -166,6 +168,8 @@ textarea#user-input {
     border: 1px solid #444;
     white-space: pre-wrap;
     font-family: monospace;
+    height: 250px;
+    overflow: auto;
 
 }
 
