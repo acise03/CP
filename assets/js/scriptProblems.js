@@ -2,10 +2,43 @@ document.addEventListener('DOMContentLoaded', function () {
     const container = document.querySelector('.problems');
     const problems = [
         {
+            name: "DMOPC '15 Contest 6 P3 - Harvest", link: "https://dmoj.ca/problem/dmopc15c6p3", input: `5 5 6
+2 5
+1 3
+4 5
+3 3
+1 2`
+        },
+        {
+            name: "The Third Cellar", link: "https://dmoj.ca/problem/phantom2", input: `2
+1 1000
+1000 4000`
+        }, {
+            name: "CCC '10 S4 - Animal Farm", link: "https://dmoj.ca/problem/ccc10s4", input: `4
+3 1 2 3 7 4 6
+4 1 2 4 5 7 7 2 6
+4 4 7 6 5 4 8 9 2
+5 3 2 4 7 8 4 7 4 7 7`
+        },
+        {
+            name: "CCC '03 S5 - Trucking Troubles", link: "https://dmoj.ca/problem/ccc03s5", input: `5 7 3
+1 2 20
+1 3 50
+1 4 70
+1 5 90
+2 3 30
+3 4 40
+4 5 60
+2
+4
+5`
+        },
+        {
             name: "2spooky4me", link: "https://dmoj.ca/problem/2spooky4me", input: `3 100 10
 20 59 4
 30 69 4
-40 79 4` },
+40 79 4`
+        },
         {
             name: "An Animal Contest 4 P3 - Snowy Slopes", link: "https://dmoj.ca/problem/aac4p3", input: `3 4
 1 2
@@ -14,19 +47,22 @@ document.addEventListener('DOMContentLoaded', function () {
 -1 1
 2 1
 4 6
--2 2` },
+-2 2`
+        },
         {
             name: "Another Contest 3 Problem 1 - Diverse Arrays", link: "https://dmoj.ca/problem/acc3p1", input: `4 2
 1
 2
 2
-2` },
+2`
+        },
         {
             name: "CCC '00 S4 - Golf", link: "https://dmoj.ca/problem/ccc00s4", input: `100
 3
 33
 66
-1` },
+1`
+        },
         {
             name: "CCC '02 S4 - Bridge Crossing", link: "https://dmoj.ca/problem/ccc02s4", input: `2
 5
@@ -39,7 +75,8 @@ charlie
 dobson
 3
 eric
-3` },
+3`
+        },
         {
             name: "CCC '04 S5 - Super Plumber", link: "https://dmoj.ca/problem/ccc04s5", input: `5 10
 ..3.......
@@ -50,7 +87,8 @@ eric
 2 2
 99
 88
-0 0` },
+0 0`
+        },
         {
             name: "CCC '05 S4 - Pyramid Message Scheme", link: "https://dmoj.ca/problem/ccc05s4", input: `1
 8
@@ -98,7 +136,9 @@ sixthstreet King`
 0 0 1 0 1
 0 0 1 1 0`
         }, {
-            name: "GlobeX Cup '18 S3 - Playing With Bits", link: "https://dmoj.ca/problem/globexcup18s3", input: `2 1000000007 3 5`
+            name: "GlobeX Cup '18 S3 - Playing With Bits",
+            link: "https://dmoj.ca/problem/globexcup18s3",
+            input: `2 1000000007 3 5`
         }, {
             name: "ECOO '14 R2 P4 - What Lies Ahead", link: "https://dmoj.ca/problem/ecoo14r2p4", input: `..TT..
 TCURC.
@@ -134,7 +174,9 @@ TDUCU.
 -4 2 1
 3 3 1`
         }, {
-            name: "DMOPC '15 Contest 1 P5 - Lelei and Dragon Scales", link: "https://dmoj.ca/problem/dmopc15c1p5", input: `5 5 4
+            name: "DMOPC '15 Contest 1 P5 - Lelei and Dragon Scales",
+            link: "https://dmoj.ca/problem/dmopc15c1p5",
+            input: `5 5 4
 0 0 0 0 10
 0 5 0 1 2
 2 0 3 7 1
@@ -193,11 +235,15 @@ TDUCU.
 3 2
 4 3`
         }, {
-            name: "Yet Another Contest 6 P3 - No More Cell Phone Messaging", link: "https://dmoj.ca/problem/yac6p3", input: `2 3
+            name: "Yet Another Contest 6 P3 - No More Cell Phone Messaging",
+            link: "https://dmoj.ca/problem/yac6p3",
+            input: `2 3
 2
 2`
         }, {
-            name: "Wesley's Anger Contest 6 Problem 3 - Difference Sorting", link: "https://dmoj.ca/problem/wac6p3", input: `8
+            name: "Wesley's Anger Contest 6 Problem 3 - Difference Sorting",
+            link: "https://dmoj.ca/problem/wac6p3",
+            input: `8
 1 4 4 2 7 14 12 10`
         }, {
             name: "Tropical Bananas", link: "https://dmoj.ca/problem/tropical", input: `4 5
@@ -207,7 +253,9 @@ TDUCU.
 0 2 3 3 -9
 0 2 3 5 -1`
         }, {
-            name: "Triway Cup '18 Summer B - Beautiful Water Pearl", link: "https://dmoj.ca/problem/tc18summerb", input: `110 44 66`
+            name: "Triway Cup '18 Summer B - Beautiful Water Pearl",
+            link: "https://dmoj.ca/problem/tc18summerb",
+            input: `110 44 66`
         }, {
             name: "Tree Tasks", link: "https://dmoj.ca/problem/treepractice1", input: `5
 1 2 1
@@ -269,10 +317,10 @@ C.C.`
     ];
 
     problems.sort((a, b) => a.name.localeCompare(b.name));
-    
+
     const button = document.createElement('button');
     button.classList.add('button3');
-    button.textContent = 'blank file'; 
+    button.textContent = 'blank file';
     button.onclick = () => {
         window.location.href = `problemTemplate.html?name=${encodeURIComponent('blank file')}&link=${encodeURIComponent('')}&input=${encodeURIComponent('')}`;
 
