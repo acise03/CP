@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
         theme: 'dracula',
         indentUnit: 4,
         autofocus: true,
+        smartIndent: true,
         lineWrapping: true,
         viewportMargin: Infinity
     });
@@ -49,7 +50,7 @@ async function runCode() {
     const runTimeElement = document.getElementById('runtime');
     const userInput = document.getElementById('user-input').value;
     outputElement.textContent = 'Running...';
-    runTimeElement.textContent = `<b>Runtime:</b> ...Running...`;
+    runTimeElement.textContent = `< b > Runtime:</b > ...Running...`;
     try {
         const response = await fetch('https://emkc.org/api/v2/piston/execute', {
             method: 'POST',
