@@ -4,6 +4,7 @@ using namespace std;
 int N = 10005;
 int M;
 int p[10005], height[10005], setSize[10005];
+int costs[10005];
 int numSets;
 vector<tuple<int, int, int> > edgeList; // weight, edge, edge
 
@@ -54,7 +55,7 @@ unordered_set<int> mustVisit;
 
 int main() {
     cin >> c >> r >> d;
-    N = c;
+    N = c + 1;
 
     initialize();
 
@@ -63,7 +64,7 @@ int main() {
         cin >> x >> y >> w;
         edgeList.push_back({-w, x, y});
     }
-
+    mustVisit.insert(1);
     for (int i = 0; i < d; i++) {
         int dcity;
         cin >> dcity;
@@ -71,11 +72,29 @@ int main() {
     }
 
     sort(edgeList.begin(), edgeList.end());
-    int cost = 0;
 
+    int maxi = INT_MAX;
 
     for (auto x: edgeList) {
-        cost -= get<0>(x) * unionSet((get<1>(x)), get<2>(x));
+        if (mustVisit.empty()) {
+            break;
+        }
+        if (!isSameSet(get<1>(x), get<2>(x))) {
+            unionSet(get<1>(x), get<2>(x));
+            maxi = min(maxi, -get<0>(x));
+
+            if (isSameSet(get<1>(x), 1))
+                mustVisit.erase(get<1>(x));
+            if (isSameSet(get<2>(x), 1))
+                mustVisit.erase(get<2>(x));
+        }
+    }
+
+    cout << maxi << endl;
+}
+
+
+/*
         if (mustVisit.find(get<1>(x)) != mustVisit.end() && isSameSet(get<1>(x), 1)) {
             mustVisit.erase(get<1>(x));
             for (int v: mustVisit) {
@@ -92,7 +111,4 @@ int main() {
                 }
             }
         }
-        if (mustVisit.empty()) break;
-    }
-    cout << cost << endl;
-}
+        if (mustVisit.empty()) break;*/
