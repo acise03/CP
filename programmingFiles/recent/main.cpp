@@ -1,37 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
-
 int N;
-string S;
+int memo[1000005];
 
 signed main() {
     cin.sync_with_stdio(0);
     cin.tie(0);
+    memset(memo, -1, 1000001);
+    memo[0] = 1;
+    memo[1] = 1;
     cin >> N;
-    for (int i = 0; i < N; i++) {
-        cin >> S;
-        int c = 2;
-        int l = S.length() - 1;
-        while (l > 0) {
-            int st = S.length() - l;
-            while (st >= 0) {
-                if (S.find(S.substr(st, l)) == st) {
-                    c++;
-                }
-                st--;
-            }
-            st = S.length() - l;
-            while (st >= 0) {
-                if (S.find(S.substr(st, l)) == st) {
-                    st--;
-                } else {
-                    S = S.substr(0, st + l);
-                    st = S.length() - l - 1;
-                }
-            }
-            l--;
+    int res = 1;
+    for (int x = 2; x <= sqrt(double(N)); x++) {
+        int c = 0;
+        for (int w = 1; w <= double(x) / 2; w++) {
+            c += memo[w] * (floor(x / w) - floor(x / (w + 1)));
         }
-        cout << c << endl;
+        if (c == 0) { c++; }
+        memo[x] = c;
+        res += c;
     }
+
+    for (int y = 2; static_cast<double>(N) / static_cast<double>(y) > static_cast<double>(sqrt(N)); y++) {
+        res += memo[N / y];
+    }
+    cout << res << endl;
 }
