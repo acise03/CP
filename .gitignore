@@ -1,0 +1,7 @@
+.autocp
+.idea/editor.xml
+/.idea
+/.vscode
+*.exe
+*.xml
+*.iml

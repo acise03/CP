@@ -1,106 +1,51 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
-int N, M, R, C;
-char g[2005][2005];
+int N, S, sx, sy, vx, vy;
+tuple<int, int, int,int> squirrels[15];
+float memo[15][1 << 15];
+
+float dp(int v, int mask, float x, float y) {
+    if (mask == 0) {
+        return 0;
+    }
+    if (memo[v][mask] != -1) {
+        return memo[v][mask];
+    }
+    float res = INT_MAX;
+    for (int sq = 0; sq < N; sq++) {
+        sx = get<0>(squirrels[sq]);
+        sy = get<1>(squirrels[sq]);
+        vx = get<2>(squirrels[sq]);
+        vy = get<3>(squirrels[sq]);
+        if (mask & (1 << sq)) {
+            float a = vx * vx + vy * vy - S * S;
+            float b = 2 * sx * vx + 2 * sy * vy - 2 * x * vx - 2 * vy * y;
+            float c = sx * sx + sy * sy - x * x - y * y - 2 * sx * x - 2 * sy * y;
+            float k1 = (-b - sqrt(b * b - 4 * a * c)) / (2 * a);
+            float k2 = (-b + sqrt(b * b - 4 * a * c)) / (2 * a);
+            res = min({
+                res, abs(k1) + dp(sq, mask & ~(1 << sq), sx + vx * k1, sy + vy * k1),
+                abs(k2) + dp(sq, mask & ~(1 << sq), sx + vx * k2, sy + vy * k2)
+            });
+        }
+    }    
+    memo[v][mask] = res;
+    return res;
+}
 
 signed main() {
     cin.sync_with_stdio(0);
     cin.tie(0);
-    cin >> N >> M >> R >> C;
 
-    if (R < C) {
-        for (int i = 0; i < R; i++) {
-            for (int j = 0; j < M; j++) {
-                g[i][j] = 'a';
-            }
-        }
-        char nextt = 'b';       
-
-        for (int i = 0; i < C; i++) {
-            for (int j = 0; j < N; j++) {
-                if (g[j][i] == 'a') {
-                    g[N - j - 1][i] = 'a';
-                } else {
-                    g[j][i] = nextt;
-                }
-            }
-            nextt++;
-            if (nextt > 'z') {
-                nextt = 'b';
-            }
-        }
-    } else {
-        for (int i = 0; i < C; i++) {
-            for (int j = 0; j < N; j++) {
-                g[j][i] = 'a';
-            }
-        }
-        char nextt = 'b';
-
-        for (int i = 0; i < R; i++) {
-            for (int j = 0; j < M; j++) {
-                if (g[i][j] == 'a') {
-                    g[i][M - j - 1] = 'a';
-                } else {
-                    g[i][j] = nextt;
-                }
-            }
-            nextt++;
-            if (nextt > 'z') {
-                nextt = 'b';
-            }
-        }
-    }
-    char nextletter = 'c';
+    cin >> N >> S;
     for (int i = 0; i < N; i++) {
-        char letter = nextletter;
-        nextletter = letter + 1;
-        if (nextletter > 'z') {
-            nextletter = 'c';
-        }
-        for (int j = 0; j < M; j++) {
-            if (isblank(g[i][j])) {
-                g[i][j] = letter;
-                letter++;
-                if (letter > nextletter + 2) {
-                    letter = nextletter - 1;
-                }
-            }
+        cin >> sx >> sy >> vx >> vy;
+        squirrels[i] = {sx, sy, vx, vy};
+        for (int j = 0; j < 1 << 15; j++) {
+            memo[i][j] = -1;
         }
     }
-    int rowCount = 0;
-    int colCount = 0;
-    for (int i = 0; i < N; i++) {
-        bool isPalin = true;
-        for (int j = 0; j <= ceil(M / 2); j++) {
-            if (g[i][j] != g[i][M - j - 1]) {
-                isPalin = false;
-                break;
-            }
-        }
-        if (isPalin)
-            rowCount++;
-    }
-    for (int j = 0; j < M; j++) {
-        bool isPalin = true;
-        for (int i = 0; i <= ceil(N / 2); i++) {
-            if (g[i][j] != g[N - i - 1][j]) {
-                isPalin = false;
-                break;
-            }
-        }
-        if (isPalin)
-            colCount++;
-    }
-    if (rowCount == R && colCount == C) {
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < M; j++) {
-                cout << g[i][j];
-            }
-            cout << endl;
-        }
-    } else {
-        cout << "IMPOSSIBLE" << endl;
-    }
+
+    cout << dp(0, ((1 << N) - 1), 0, 0) << endl;
 }
