@@ -53,4 +53,3 @@ signed main() {
     }
     cout << maxi << endl;
 }
- 

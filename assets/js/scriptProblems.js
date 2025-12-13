@@ -313,7 +313,201 @@ CC..
 C.C.`
         }, {
             name: "IOI '14 Practice Task 3 - Tile", link: "https://dmoj.ca/problem/ioi14pp3", input: `1 0 0`
-        }
+        }, {
+            name: "CCO Preparation Test 6 P3 - HopScotch", link: "https://dmoj.ca/problem/ccoprep6p3", input: `4
+1 2 1 1
+3
+1 1
+2 1 1
+1 1`
+        }, {
+            name: "NOI '04 P1 - The Depressed Cashier", link: "https://dmoj.ca/problem/noi04p1", input: `9 10
+I 60
+I 70
+S 50
+F 2
+I 30
+S 15
+A 5
+F 1
+F 2`
+        }, {
+            name: "DMPG '15 S6 - Apples to Oranges", link: "https://dmoj.ca/problem/dmpg15s6", input: `3 4
+APPLES
+ORANGE
+GRAPE
+ORANGE APPLES 2.0000000000
+APPLES ORANGE 0.5000000000
+APPLES GRAPE 1.0000000000
+GRAPE ORANGE 0.5000000000`
+        }, {
+            name: "Fibonacci Sequence (Harder)", link: "https://dmoj.ca/problem/fibonacci2", input: `26`
+        }, {
+            name: "CCO Preparation Test 1 P3 - K-th Rank Student", link: "https://dmoj.ca/problem/ccoprep1p3", input: `5 1
+4 3 2 5 1
+1 2
+7
+Q 3 2
+Q 2 1
+B 2 3
+B 1 5
+Q 2 1
+Q 2 4
+Q 2 3`
+        }, {
+            name: "CCC '10 S3 - Firehose", link: "https://dmoj.ca/problem/ccc10s3", input: `4
+0
+67000
+68000
+77000
+2`
+        }, {
+            name: "CCO '10 P2 - Tree Pruning", link: "https://dmoj.ca/problem/cco10p2", input: `6 3
+0 1 2
+1
+3
+1 1 2
+2
+5
+2 1 1
+4
+3 1 0
+4 0 0
+5 1 0`
+        }, {
+            name: "Baltic OI '07 P5 - Connected Points", link: "https://dmoj.ca/problem/btoi07p5", input: `3`
+        }, {
+            name: "Fibonacci Sequence", link: "https://dmoj.ca/problem/fibonacci", input: `26`
+        }, {
+            name: "Educational DP Contest AtCoder R - Walk", link: "https://dmoj.ca/problem/dpr", input: `4 2
+0 1 0 0
+0 0 1 1
+0 0 0 1
+1 0 0 0`
+        }, {
+            name: "Baltic OI '13 P2 - Palindrome-Free Numbers", link: "https://dmoj.ca/problem/btoi13p2", input: `123 321`
+        }, {
+            name: "CCO '14 P2 - King Gruff", link: "https://dmoj.ca/problem/cco14p2", input: `4 5 1 3
+1 2 5 1
+1 2 8 50
+2 3 2 15
+3 1 80 1000
+3 4 1 1
+4
+8
+6
+90
+94`
+        }, {
+            name: "LKP '18 Contest 1 P4 - Fun in Föràg", link: "https://dmoj.ca/problem/lkp18c1p4", input: `4 4
+1 4 10
+1 2 3
+3 4 2
+2 3 1
+1 4 9`
+        }, {
+            name: "CCC '15 S4 - Convex Hull", link: "https://dmoj.ca/problem/ccc15s4", input: `10 4 7
+1 2 4 4
+1 3 7 2
+3 1 8 1
+3 2 2 2
+4 2 1 6
+3 4 1 1
+1 4 6 12
+1 4`
+        }, {
+            name: "COCI '06 Contest 5 #6 Dvaput", link: "https://dmoj.ca/problem/coci06c5p6", input: `3`
+        }, {
+            name: "CCO '15 P2 - Artskjid", link: "https://dmoj.ca/problem/cco15p2", input: `3 3
+0 2 5
+0 1 4
+1 2 3`
+        }, {
+            name: "CCC '18 S4 - Balanced Trees.cpp", link: "https://dmoj.ca/problem/ccc18s4", input: `4`
+        }, {
+            name: "CCC '14 S4 - Tinted Glass Window", link: "https://dmoj.ca/problem/ccc14s4", input: `4
+3
+11 11 20 15 1
+13 8 14 17 2
+17 8 18 17 1
+12 12 19 13 1`
+        }, {
+            name: "IOI '01 P1 - Mobile Phones", link: "https://dmoj.ca/problem/ioi01p1", input: `0 4
+1 1 2 3
+2 0 0 2 2
+1 1 1 2
+1 1 2 -1
+2 1 1 2 3
+3`
+        }, {
+            name: "CCC '13 S5 - Factor Solitaire", link: "https://dmoj.ca/problem/ccc13s5", input: `15`
+        }, {
+            name: "CCC '16 S4 - Combining Riceballs", link: "https://dmoj.ca/problem/ccc16s4", input: `7
+47 12 12 3 9 9 3`
+        }, {
+            name: "CCC '02 S3 - Blindfold", link: "https://dmoj.ca/problem/ccc02s3", input: `2
+4
+....
+.XX.
+3
+F
+R
+F`
+        }, {
+            name: "A Fenwick Tree Question", link: "https://dmoj.ca/problem/olyrim2", input: `6 1
+4 4 8 10 4 6
+2 3 6`
+        }, {
+            name: "MNYC '16 Rocks", link: "https://dmoj.ca/problem/mnyc16p6", input: `12
+A a
+A b
+A c
+M a c
+M b c
+S a c
+M b a
+R c d
+M d b
+A c
+A d
+N`
+        }, {
+            name: "COCI '15 Contest 2 #5 Vudu", link: "https://dmoj.ca/problem/coci15c2p5", input: `3
+1 2 3
+3`
+        }, {
+            name: "Binary Search Tree Test", link: "https://dmoj.ca/problem/ds4", input: `5 8
+9 4 8 11 2
+S 4
+I 1
+S 13
+R 10
+L 10
+L -5
+I 8
+L 8`
+        }, {
+            name: "CCO '10 P3 - Wowow", link: "https://dmoj.ca/problem/cco10p3", input: `7
+N 10 1000
+N 3 1014
+Q 1
+M 10 2000
+Q 1
+N 65 1950
+Q 2`
+        }, {
+            name: "DMOPC '19 Contest 6 P4 - Grade 12 Math", link: "https://dmoj.ca/problem/dmopc19c6p4", input: `10 10
+1 5
+3 4 5 0
+1 10
+3 9 10 -1
+2 8
+3 8 10 -1
+3 1 10 0
+3 6 10 -2
+1 5
+3 4 9 2`
+        } 
     ];
 
     problems.sort((a, b) => a.name.localeCompare(b.name));

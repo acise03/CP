@@ -1,1 +1,0 @@
-{"name":"Local: s5","url":"d:\\git\\CP\\s5.cpp","tests":[{"id":1733181461970,"input":"11405\n18\n633 733 3852 4295 12404 12997 14210 18679 19051 21284 25504 28381 29247 29606 29979 30228 30771 31590\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\git\\CP\\s5.cpp","group":"local","local":true}

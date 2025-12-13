@@ -1,51 +1,82 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define int long long
-int N, S, sx, sy, vx, vy;
-tuple<int, int, int,int> squirrels[15];
-float memo[15][1 << 15];
+int N, M;
+double finicky = 0;
+map<string, int> fruits;
+vector<pair<int, double> > adjList[505];
+vector<int> revAdjList[505];
+bool visited[505];
+double values[505];
+bool canConnectBackToApple[505];
+bool poss = false;
 
-float dp(int v, int mask, float x, float y) {
-    if (mask == 0) {
-        return 0;
-    }
-    if (memo[v][mask] != -1) {
-        return memo[v][mask];
-    }
-    float res = INT_MAX;
-    for (int sq = 0; sq < N; sq++) {
-        sx = get<0>(squirrels[sq]);
-        sy = get<1>(squirrels[sq]);
-        vx = get<2>(squirrels[sq]);
-        vy = get<3>(squirrels[sq]);
-        if (mask & (1 << sq)) {
-            float a = vx * vx + vy * vy - S * S;
-            float b = 2 * sx * vx + 2 * sy * vy - 2 * x * vx - 2 * vy * y;
-            float c = sx * sx + sy * sy - x * x - y * y - 2 * sx * x - 2 * sy * y;
-            float k1 = (-b - sqrt(b * b - 4 * a * c)) / (2 * a);
-            float k2 = (-b + sqrt(b * b - 4 * a * c)) / (2 * a);
-            res = min({
-                res, abs(k1) + dp(sq, mask & ~(1 << sq), sx + vx * k1, sy + vy * k1),
-                abs(k2) + dp(sq, mask & ~(1 << sq), sx + vx * k2, sy + vy * k2)
-            });
+void connectToApple() {
+    queue<int> qq;
+    qq.push(fruits["APPLES"]);
+    canConnectBackToApple[fruits["APPLES"]] = true;
+    while (!qq.empty()) {
+        int vv = qq.front();
+        qq.pop();
+        for (auto k: adjList[vv]) {
+            if (!canConnectBackToApple[k.first]) {
+                canConnectBackToApple[k.first] = true;
+                qq.push(k.first);
+            }
         }
-    }    
-    memo[v][mask] = res;
-    return res;
+    }
+}
+
+
+void findCycle() {
+    queue<pair<int, double> > q;
+    q.push({fruits["APPLES"], 1});
+    visited[fruits["APPLES"]] = true;
+    values[fruits["APPLES"]] = 1;
+    while (!q.empty()) {
+        pair p = q.front();
+        q.pop();
+        int v = p.first;
+        double val = p.second;
+        for (auto pp: adjList[v]) {
+            if (visited[pp.first]) {
+                if (values[pp.first] < val * pp.second + finicky) {
+                    if (canConnectBackToApple[pp.first]) {
+                        poss = true;
+                        break;
+                    }
+                }
+            } else {
+                visited[pp.first] = true;
+                values[pp.first] = values[v] * pp.second;
+                q.push({pp.first, values[pp.first]});
+            }
+        }
+    }
 }
 
 signed main() {
     cin.sync_with_stdio(0);
     cin.tie(0);
-
-    cin >> N >> S;
+    cin >> N >> M;
     for (int i = 0; i < N; i++) {
-        cin >> sx >> sy >> vx >> vy;
-        squirrels[i] = {sx, sy, vx, vy};
-        for (int j = 0; j < 1 << 15; j++) {
-            memo[i][j] = -1;
-        }
+        string s;
+        cin >> s;
+        fruits[s] = i;
+    }
+    for (int i = 0; i < M; i++) {
+        string a, b;
+        cin >> a >> b;
+        double exchangeRate;
+        cin >> exchangeRate;
+        adjList[fruits[a]].push_back({fruits[b], exchangeRate});
+        revAdjList[fruits[b]].push_back(fruits[a]);
     }
 
-    cout << dp(0, ((1 << N) - 1), 0, 0) << endl;
+
+    connectToApple();
+    findCycle();
+
+    if (poss) {
+        cout << "YA\n";
+    } else cout << "NAW\n";
 }

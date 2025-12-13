@@ -1,15 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
-int N, K;
+#define int long long
+const int mod = 1000000007;
 vector<vector<int> > arr;
 
-vector<vector<int> > multiply(vector<vector<int> > matrix1,                                    vector<vector<int> > matrix2) {
+vector<vector<int> > multiply(vector<vector<int> > matrix1,
+                              vector<vector<int> > matrix2) {
     vector<vector<int> > ans;
     for (int i = 0; i < matrix1.size(); i++) {
         vector<int> row(matrix1.size());
         for (int j = 0; j < matrix1.size(); j++)
             for (int k = 0; k < matrix1.size(); k++) {
-                row[j] += matrix1[i][k] * matrix2[k][j];
+                row[j] += ((matrix1[i][k] % mod) * (matrix2[k][j] % mod)) % mod;
+                row[j] %= mod;
             }
         ans.push_back(row);
     }
@@ -33,25 +36,20 @@ vector<vector<int> > power(vector<vector<int> > matrix, int n) {
     return ans;
 }
 
+string x;
+int n;
+
 signed main() {
     cin.sync_with_stdio(0);
     cin.tie(0);
-    cin >> N >> K;
-    for (int i = 0; i < N; i++) {
-        vector<int> news;
-        for (int j = 0; j < N; j++) {
-            int x;
-            cin >> x;
-            news.push_back(x);
-        }
-        arr.push_back(news);
+    cin >> x;
+    for (char c: x) {
+        n *= 10;
+        n += c - '0';
+        n %= 2 * mod + 2;
     }
-    vector<vector<int> > result = power(arr, K);
-    int cou = 0;
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            cou += result[i][j];
-        }
-    }
-    cout << cou << endl;
+    arr.push_back({0, 1});
+    arr.push_back({1, 1});
+    vector<vector<int> > result = power(arr, n - 1);
+    cout << result[1][1] % mod << endl;
 }

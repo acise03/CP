@@ -1,1 +1,0 @@
-{"name":"Local: CCO '13 P3 - LHC","url":"c:\\git\\CP\\CCO '13 P3 - LHC.cpp","tests":[{"id":1736437533617,"input":"7\n1 2\n1 3\n2 4\n2 5\n3 6\n3 7\n","output":"5 4\n"},{"id":1736545921970,"input":"5\n1 3\n2 3\n3 4\n4 5\n","output":"4 2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\git\\CP\\CCO '13 P3 - LHC.cpp","group":"local","local":true}

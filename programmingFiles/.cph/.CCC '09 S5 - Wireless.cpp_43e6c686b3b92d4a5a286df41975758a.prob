@@ -1,1 +1,0 @@
-{"name":"Local: CCC '09 S5 - Wireless","url":"d:\\git\\CP\\CCC '09 S5 - Wireless.cpp","tests":[{"id":1733268934357,"input":"3\n5\n3\n1 3 2 5\n3 1 2 7\n5 1 1 5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\git\\CP\\CCC '09 S5 - Wireless.cpp","group":"local","local":true}
